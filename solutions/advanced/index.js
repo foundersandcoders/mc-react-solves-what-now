@@ -28,11 +28,8 @@ class StatefulRenderer extends Renderer {
   }
 
   setState(newState) {
-    console.log('newState', newState)
-    console.log(this.state)
     Object.assign(this.state, newState)
     this.clearElements()
-    console.log(this.state)
     this.createElement(this.componentMakers(this, this.state))
   }
 }
