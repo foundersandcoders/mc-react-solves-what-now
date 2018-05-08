@@ -1,0 +1,18 @@
+body {
+  background-color: aliceblue;
+}
+
+button {
+  background-color: lightpink;
+  border: 4px outset #fb8799;
+  padding: 10px;
+  margin: 10px;
+  outline-color: aquamarine;
+  font-family: Monospace, Sans-Serif;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: #ff8799;
+  border: 4px outset #ff7186;
+}
