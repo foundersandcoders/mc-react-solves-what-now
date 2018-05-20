@@ -1,32 +1,26 @@
-class Renderer {
-  constructor(props) {
-    this.root = props.root
-  }
-
-  createElement({ tagName, children = [], onclick = () => {} }) {
-    const el = document.createElement(tagName)
-    onclick ? (el.onclick = onclick) : null
-    children.forEach(child => {
-      el.appendChild(child)
-    })
-    this.root.appendChild(el)
-  }
-
-  clearElements() {
-    while (this.root.hasChildNodes()) {
-      this.root.removeChild(this.root.lastChild)
-    }
-  }
+function createElement({ tagName, text, onClick }) {
+  const element = document.createElement(tagName);
+  element.textContent = text;
+  element.onclick = onClick;
+  return element;
 }
 
-let state = { counter: 0 }
+let state = { count: 0 };
 
-const renderer = new Renderer({ root: document.getElementById('root') })
+function Button() {
+  return createElement({
+    tagName: 'button',
+    text: `Count ${state.count}`,
+    onClick: () => console.log('👋🏼'), // might need to change this
+  });
+}
 
-renderer.createElement({
-  tagName: 'button',
-  children: [
-    document.createTextNode(`Press me to count upwards! ${state.counter}`)
-  ],
-  onclick: () => console.log('👋')
-})
+function render(/* mysterious params */) {
+  // finish me
+}
+
+function setState(newState) {
+  // definitely need something in here
+}
+
+render(/* something might go here */);
